@@ -1,5 +1,3 @@
-require('./array');
-
 String.prototype.chars = function() {
   return this.split('');
 };
