@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
+        "build": "cat src/*.js | grep -v '^require' | babel -f _ | uglifyjs -cm > out/my-lib.js",
         "lint": "eslint *.js test/*.js; true"
     },
     "author": "Zach Gulde",
