@@ -1,5 +1,6 @@
 /*globals describe test expect*/
-require('../string');
+
+import {} from '../string';
 
 describe('chars', () => {
   test('turns a string into an array of characters', () => {

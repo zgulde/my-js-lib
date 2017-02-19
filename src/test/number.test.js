@@ -1,5 +1,6 @@
 /*globals describe test expect jest*/
-require('../number');
+
+import {} from '../number';
 
 describe('isOdd and isEven', () => {
   let evenNumber = 42;

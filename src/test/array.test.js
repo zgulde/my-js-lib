@@ -1,5 +1,6 @@
 /*globals describe test expect*/
-require('../array');
+
+import {} from '../array';
 
 describe('first', () => {
   test('returns the first element of the array if no argument is passed', () => {
