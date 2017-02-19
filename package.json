@@ -1,0 +1,24 @@
+{
+    "name": "js-lib",
+    "version": "1.0.0",
+    "description": "Library for common js stuff",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint *.js test/*.js; true"
+    },
+    "author": "Zach Gulde",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-preset-env": "^1.1.8",
+        "eslint": "^3.15.0",
+        "eslint-plugin-jest": "^1.0.2",
+        "jest": "^18.1.0",
+        "uglify-js": "^2.7.5"
+    },
+    "babel": {
+        "presets": ["env"]
+    }
+}
