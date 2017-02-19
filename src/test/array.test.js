@@ -1,28 +1,15 @@
 /*globals describe test expect*/
 require('../array');
 
-describe('dropIf', () => {
-  test('works with elements', () => {
-    expect([1, 2, 3, 4, 5].dropIf(n => n === 1)).toEqual([2, 3, 4, 5]);
-  });
-  test('works with elements and indices', () => {
-    expect(
-      [1, 2, 3, 4, 5].dropIf((n, i) => n == 3 || i == 1)
-    ).toEqual(
-      [1, 4, 5]
-    );
-  });
-});
-
 describe('first', () => {
-  test('returns the first element if no arg is passed', () => {
+  test('returns the first element of the array if no argument is passed', () => {
     expect([1, 2, 3].first()).toBe(1);
-  });
-  test('returns the first two arguments if 2 is passed', () => {
-    expect([1, 2, 3].first(2)).toEqual([1, 2]);
   });
   test('returns an array with the first element if 1 is passed', () => {
     expect([1, 2, 3].first(1)).toEqual([1]);
+  });
+  test('returns the first two elements if 2 is passed', () => {
+    expect([1, 2, 3].first(2)).toEqual([1, 2]);
   });
   test('works when passed a number greater than the array length', () => {
     expect([1, 2, 3].first(100)).toEqual([1, 2, 3]);
@@ -35,11 +22,11 @@ describe('first', () => {
 });
 
 describe('rest', () => {
-  test('an array w/ one element returns an empty array', () => {
-    expect([1].rest()).toEqual([]);
-  });
   test('returns everything but the first element', () => {
     expect([1, 2, 3, 4, 5].rest()).toEqual([2, 3, 4, 5]);
+  });
+  test('an array w/ one element returns an empty array', () => {
+    expect([1].rest()).toEqual([]);
   });
   test('works on an empty array', () => {
     expect([].rest()).toEqual([]);
@@ -47,7 +34,7 @@ describe('rest', () => {
 });
 
 describe('last', () => {
-  test('returns the last element when no arg is passed', () => {
+  test('returns the last element of the array when no argument is passed', () => {
     expect([1, 2, 3, 4, 5].last()).toBe(5);
   });
   test('returns an array with the last element when 1 is passed', () => {
@@ -73,7 +60,7 @@ describe('sample', () => {
       expect(arr.includes(arr.sample())).toBe(true);
     }
   });
-  test('returns an array of items when passed a number', () => {
+  test('returns an array of randomly selected items when passed a number', () => {
     let arr = [1, 2, 3, 4, 5];
     expect(arr.sample(1).length).toBe(1);
     expect(arr.sample(2).length).toBe(2);
@@ -82,7 +69,10 @@ describe('sample', () => {
 });
 
 describe('chunk', () => {
-  test('an array of 6 elemnts is broken into 3 chunks of 2', () => {
+  test('breaks the array into chunks whose size is based on the argument', () => {
+    expect([1, 2, 3].chunk(1)).toEqual([[1], [2], [3]]);
+  });
+  test('an array of 6 elemnts is broken into 3 chunks when 2 is passed', () => {
     let chunked = [1, 2, 3, 4, 5, 6].chunk(2);
     expect(chunked).toEqual([[1, 2], [3, 4], [5, 6]]);
   });
@@ -133,3 +123,17 @@ describe('flatten', () => {
     expect([1, 2, 3, 4, 5].flatten()).toEqual([1, 2, 3, 4, 5]);
   });
 });
+
+describe('dropIf', () => {
+  test('works with elements', () => {
+    expect([1, 2, 3, 4, 5].dropIf(n => n === 1)).toEqual([2, 3, 4, 5]);
+  });
+  test('works with elements and indices', () => {
+    expect(
+      [1, 2, 3, 4, 5].dropIf((n, i) => n == 3 || i == 1)
+    ).toEqual(
+      [1, 4, 5]
+    );
+  });
+});
+
