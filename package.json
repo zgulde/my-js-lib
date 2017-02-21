@@ -7,7 +7,7 @@
         "install": "./install-hooks.sh",
         "test": "jest",
         "build": "cat src/*.js | grep -v '^require' | babel -f _ | uglifyjs -cm > out/my-lib.js",
-        "lint": "eslint src/*.js src/test/*.js; true"
+        "lint": "eslint $(find src -name '*.js')"
     },
     "author": "Zach Gulde",
     "license": "ISC",
