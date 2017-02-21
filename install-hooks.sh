@@ -8,7 +8,7 @@ fi
 cat > .git/hooks/pre-commit <<'.'
 #!/bin/bash
 
-./node_modules/.bin/jest && ./node_modules/.bin/eslint $(find src -name '*.js')
+npm run lint && npm test
 .
 
 chmod +x .git/hooks/pre-commit
