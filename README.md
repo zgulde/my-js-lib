@@ -26,3 +26,11 @@ Build + minify
 ```
 npm run build
 ```
+
+## Documentation
+
+Documentation is built into the tests
+
+```
+npm test -- --verbose
+```
