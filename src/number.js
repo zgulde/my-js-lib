@@ -16,3 +16,7 @@ Number.prototype.to = function(n, step){
 Number.prototype.times = function(cb) {
   new Array(+this).fill(null).forEach((_, i) => cb(i + 1));
 };
+
+Number.prototype.fizzbuzz = function() {
+  return [['fizz'][this % 3], ['buzz'][this % 5]].join('') || this;
+};
