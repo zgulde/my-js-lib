@@ -22,11 +22,9 @@ Array.prototype.sample = function(n) {
 };
 
 Array.prototype.chunk = function(n) {
-  let chunked = [];
-  for (let i = 0; i < this.length; i += n) {
-    chunked.push(this.slice(i, i + n));
-  }
-  return chunked;
+  return new Array(Math.ceil(this.length / n))
+    .fill(null)
+    .map((_, i) => this.slice(i * n, n * (i + 1)));
 };
 
 Array.prototype.unique = function() {
