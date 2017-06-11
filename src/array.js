@@ -15,10 +15,9 @@ Array.prototype.last = function(n) {
 };
 
 Array.prototype.sample = function(n) {
-  if (typeof n === 'undefined') {
-    return this[Math.floor(Math.random() * this.length)];
-  }
-  return new Array(n).fill(null).map(() => this.sample());
+  return typeof n === 'undefined'
+    ? this[Math.floor(Math.random() * this.length)]
+    : new Array(n).fill(null).map(() => this.sample());
 };
 
 Array.prototype.chunk = function(n) {
