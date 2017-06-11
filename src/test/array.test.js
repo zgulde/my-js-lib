@@ -4,21 +4,25 @@ import {} from '../array';
 
 describe('Array.prototype', () =>{
   describe('.first([n]) -- returns the first n elements', () => {
-    test('returns the first element of the array if no argument is passed', () => {
+    test('[1, 2, 3].first() === 1', () => {
       expect([1, 2, 3].first()).toBe(1);
     });
-    test('returns an array with the first element if 1 is passed', () => {
+    test('[1, 2, 3].first(1) === [1]', () => {
       expect([1, 2, 3].first(1)).toEqual([1]);
     });
-    test('returns the first two elements if 2 is passed', () => {
+    test('[1, 2, 3].first(2) === [1, 2]', () => {
       expect([1, 2, 3].first(2)).toEqual([1, 2]);
     });
-    test('works when passed a number greater than the array length', () => {
+    test('[1, 2, 3].first(100) === [1, 2, 3]', () => {
       expect([1, 2, 3].first(100)).toEqual([1, 2, 3]);
     });
-    test('works with an empty array', () => {
+    test('[].first() === undefined', () => {
       expect([].first()).toBeUndefined();
+    });
+    test('[].first(1) === []', () => {
       expect([].first(1)).toEqual([]);
+    });
+    test('[].first(10) === []', () => {
       expect([].first(10)).toEqual([]);
     });
   });

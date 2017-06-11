@@ -80,12 +80,12 @@ describe('Number.prototype', () => {
     test('(6).fizzbuzz() === "fizz"', () => expect((6).fizzbuzz()).toBe('fizz') );
     test('(7).fizzbuzz() === 7', () => expect((7).fizzbuzz()).toBe(7));
     test('(8).fizzbuzz() === 8', () => expect((8).fizzbuzz()).toBe(8));
-    test('(9).fizzbuzz() === 9', () => expect((9).fizzbuzz()).toBe('fizz'));
-    test('(10).fizzbuzz() === 10', () => expect((10).fizzbuzz()).toBe('buzz'));
+    test('(9).fizzbuzz() === "fizz"', () => expect((9).fizzbuzz()).toBe('fizz'));
+    test('(10).fizzbuzz() === "buzz"', () => expect((10).fizzbuzz()).toBe('buzz'));
     test('(11).fizzbuzz() === 11', () => expect((11).fizzbuzz()).toBe(11));
-    test('(12).fizzbuzz() === 12', () => expect((12).fizzbuzz()).toBe('fizz'));
+    test('(12).fizzbuzz() === "fizz"', () => expect((12).fizzbuzz()).toBe('fizz'));
     test('(13).fizzbuzz() === 13', () => expect((13).fizzbuzz()).toBe(13));
     test('(14).fizzbuzz() === 14', () => expect((14).fizzbuzz()).toBe(14));
-    test('(15).fizzbuzz() === 15', () => expect((15).fizzbuzz()).toBe('fizzbuzz'));
+    test('(15).fizzbuzz() === "fizzbuzz"', () => expect((15).fizzbuzz()).toBe('fizzbuzz'));
   });
 });

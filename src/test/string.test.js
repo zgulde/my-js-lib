@@ -4,8 +4,8 @@ import {} from '../string';
 
 describe('String.prototype', () => {
   describe('.chars()', () => {
-    test('turns a string into an array of characters', () => {
-      expect('asdf'.chars()).toEqual(['a', 's', 'd', 'f']);
+    test('"qwerty".chars() === ["q", "w", "e", "r", "t", "y"]', () => {
+      expect('qwerty'.chars()).toEqual(['q', 'w', 'e', 'r', 't', 'y']);
     });
   });
 
