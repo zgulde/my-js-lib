@@ -9,40 +9,40 @@ describe('String.prototype', () => {
     });
   });
 
-  describe('.capitalize()', () => {
-    test('makes the first character in the string uppercase', () => {
+  describe('.capitalize() -- uppercases the first letter', () => {
+    test('"asdf".capitalize() === "Asdf"', () => {
       expect('asdf'.capitalize()).toBe('Asdf');
     });
-    test('does not affect already capitalized strings', () => {
+    test('"ABC".capitalize() === "ABC"', () => {
       expect('ABC'.capitalize()).toBe('ABC');
     });
-    test('does not affect numbers', () => {
+    test('"123abc".capitalize() === "123abc"', () => {
       expect('123abc'.capitalize()).toBe('123abc');
     });
   });
 
-  describe('.lines()', () => {
-    test('splits a string by newlines', () => {
+  describe('.lines() -- splits a string by newlines', () => {
+    test('"line one\\nline two\\nline three".lines() === ["line one", "line two", "line three"]', () => {
       let testString = 'line one\nline two\nline three';
       expect(testString.lines()).toEqual(['line one', 'line two', 'line three']);
     });
   });
 
-  describe('.reverse()', () => {
-    test('reverses a string', () => {
+  describe('.reverse() -- reverses a string', () => {
+    test('"abc".reverse() === "cba"', () => {
       expect('abc'.reverse()).toBe('cba');
     });
   });
 
-  describe('.without(str1[, str2[, ...]])', () => {
-    test('removes all instances of a given string', () => {
+  describe('.without(str1[, str2[, ...]]) -- removes instances of given string(s)', () => {
+    test('"abcabcabc".without("bc") === "aaa"', () => {
       expect('abcabcabc'.without('bc')).toBe('aaa');
     });
-    test('removes all instances of multiple given strings', () => {
+    test('"mary had a little lamb, a little lamb, a little lamb".without("little", "lamb") === "mary had a  , a  , a  "', () => {
       let s = 'mary had a little lamb, a little lamb, a little lamb';
       expect(s.without('little', 'lamb')).toBe('mary had a  , a  , a  ');
     });
-    test('does not affect a string that does not contain the passed value', () => {
+    test('"abc".without("d") === "abc"', () => {
       expect('abc'.without('d')).toBe('abc');
     });
   });
