@@ -136,4 +136,15 @@ describe('Array.prototype', () =>{
       expect([1, 2, 3, 4, 5].dropIf((n, i) => n == 3 || i == 1)).toEqual([1, 4, 5]);
     });
   });
+
+  describe('groupBy(keyFn) -- transform collection into a map', () => {
+    test('[1, 2, 3, 4].groupBy(n => n % 2 == 0 ? "even" : "odd") === {odd: [1, 3], even: [2, 4]}', () => {
+      expect(
+        [1, 2, 3, 4].groupBy(n => n % 2 == 0 ? 'even' : 'odd')
+      ).toEqual(
+        {odd: [1, 3], even: [2, 4]}
+      );
+    });
+  });
+
 });

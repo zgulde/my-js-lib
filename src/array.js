@@ -37,3 +37,12 @@ Array.prototype.without = function(...elements) {
 Array.prototype.flatten = function() {
   return this.reduce((acc, val) => acc.concat(Array.isArray(val) ? val.flatten() : val), []);
 };
+
+Array.prototype.groupBy = function(keyFn) {
+  return this.reduce((o, val) => {
+    const key = keyFn(val);
+    return Object.assign({}, o, {
+      [key]: typeof o[key] === 'undefined' ? [val] : o[key].concat(val)
+    });
+  }, {});
+};
