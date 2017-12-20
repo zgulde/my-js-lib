@@ -46,3 +46,10 @@ Array.prototype.groupBy = function(keyFn) {
     });
   }, {});
 };
+
+Array.prototype.reduceBy = function(keyFn, reducingFn) {
+  return Object.entries(this.groupBy(keyFn))
+    .reduce((o, [k, v]) => Object.assign(o, {
+      [k]: reducingFn(v)
+    }), {});
+};

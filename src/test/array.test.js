@@ -139,10 +139,25 @@ describe('Array.prototype', () =>{
 
   describe('groupBy(keyFn) -- transform collection into a map', () => {
     test('[1, 2, 3, 4].groupBy(n => n % 2 == 0 ? "even" : "odd") === {odd: [1, 3], even: [2, 4]}', () => {
+
       expect(
         [1, 2, 3, 4].groupBy(n => n % 2 == 0 ? 'even' : 'odd')
       ).toEqual(
         {odd: [1, 3], even: [2, 4]}
+      );
+
+    });
+  });
+
+  describe('reduceBy(keyFn, reducingFn) -- group by, then transform each value', () => {
+    test('[1, 2, 3, 4].reduceBy(n => n % 2 == 0 ? "even" : "odd", xs => xs.reduce((x, y) => x + y))', () => {
+      expect(
+        [1, 2, 3, 4].reduceBy(
+          n => n % 2 == 0 ? 'even' : 'odd',
+          xs => xs.reduce((x, y) => x + y)
+        )
+      ).toEqual(
+        {odd: 4, even: 6}
       );
     });
   });
